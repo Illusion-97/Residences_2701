@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type")
 @Table(name = "identification")
-public class IdForm {
+public abstract class IdForm {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String UUID;

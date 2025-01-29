@@ -1,9 +1,12 @@
 package com.example.Residences.entities.identification;
 
+import com.example.Residences.entities.residences.Residence;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,4 +19,7 @@ public class Personne {
 
     @Embedded
     private Identity identity;
+
+    @OneToMany(mappedBy = "resident")
+    private List<Residence> residences;
 }
