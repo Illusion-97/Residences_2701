@@ -8,15 +8,10 @@ import lombok.experimental.Accessors;
 
 @Getter
 @Setter
-@Accessors(fluent = true)
+@Accessors(chain = true)
 @Entity
-@IdClass(ResidenceId.class) // Préciser une classe déclarative décrivant la constitution de la clé primaire
 public class Residence {
     private boolean main;
-    @Id
-    @ManyToOne
-    private House house;
-    @Id
-    @ManyToOne
-    private Personne resident;
+    @EmbeddedId
+    private ResidenceId id;
 }

@@ -5,11 +5,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
-@Accessors(fluent = true)
+@Accessors(chain = true)
 @MappedSuperclass // Définir des comportements communs, gérés individuellement
-public class BaseEntity {
+public class BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

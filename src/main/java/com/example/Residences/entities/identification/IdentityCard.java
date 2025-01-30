@@ -7,7 +7,7 @@ import lombok.experimental.Accessors;
 
 @Getter
 @Setter
-@Accessors(fluent = true)
+@Accessors(chain = true)
 @Entity
 public class IdentityCard extends IdForm {
     private String puceId;

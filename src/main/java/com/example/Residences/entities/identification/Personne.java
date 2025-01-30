@@ -1,6 +1,8 @@
 package com.example.Residences.entities.identification;
 
 import com.example.Residences.entities.residences.Residence;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +12,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@Accessors(fluent = true)
+@Accessors(chain = true)
 @Entity
 public class Personne {
     @Id
@@ -20,6 +22,6 @@ public class Personne {
     @Embedded
     private Identity identity;
 
-    @OneToMany(mappedBy = "resident")
+    @OneToMany(mappedBy = "id.resident")
     private List<Residence> residences;
 }
