@@ -2,6 +2,7 @@ package com.example.Residences.entities.residences;
 
 import com.example.Residences.entities.identification.Personne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;

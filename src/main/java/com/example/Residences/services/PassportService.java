@@ -7,7 +7,7 @@ import com.example.Residences.repositories.PassportRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PassportService extends Generic_ServiceImpl<Passport,String, PassportRepository> implements Generic_Service<Passport,String> {
+public class PassportService extends Generic_ServiceImpl<Passport,String, Passport, PassportRepository> implements Generic_Service<Passport,String> {
     public PassportService(PassportRepository repository) {
         super(repository);
     }

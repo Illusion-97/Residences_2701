@@ -9,8 +9,9 @@ import java.util.Optional;
 public abstract class Generic_ServiceImpl<
         E,
         I,
+        D,
         R extends JpaRepository<E,I>
-        > implements Generic_Service<E,I> {
+        > implements Generic_Service<D,I> {
     protected R repository;
 
     public Generic_ServiceImpl(R repository) {
@@ -18,11 +19,20 @@ public abstract class Generic_ServiceImpl<
     }
 
     @Override
-    public Page<E> findAll(Pageable pageable) {return repository.findAll(pageable);}
+    public Page<D> findAll(Pageable pageable) {
+        return repository.findAll(pageable).map(this::toDto);
+    }
     @Override
-    public Optional<E> findById(I id) { return repository.findById(id); }
+    public Optional<D> findById(I id) { return repository.findById(id).map(this::toDto); }
     @Override
-    public E saveOrUpdate(E entity) { return repository.save(entity);}
+    public D saveOrUpdate(D dto) { return toDto(repository.save(toEntity(dto)));}
     @Override
     public void deleteById(I id) {repository.deleteById(id);}
+
+    E toEntity(D dto) {
+        return null;
+    }
+
+
+    D toDto(E entity) {return null;}
 }

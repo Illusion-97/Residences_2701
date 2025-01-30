@@ -8,7 +8,7 @@ import com.example.Residences.repositories.FarmRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class FarmService extends Generic_ServiceImpl<Farm, Address, FarmRepository> implements Generic_Service<Farm,Address> {
+public class FarmService extends Generic_ServiceImpl<Farm, Address, Farm, FarmRepository> implements Generic_Service<Farm,Address> {
     public FarmService(FarmRepository repository) {
         super(repository);
     }

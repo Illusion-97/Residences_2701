@@ -1,7 +1,7 @@
 package com.example.Residences.entities.identification;
 
 import com.example.Residences.entities.residences.Residence;
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -22,6 +22,7 @@ public class Personne {
     @Embedded
     private Identity identity;
 
+    //@JsonIgnore pratique mais indique généralement un défaut de conception
     @OneToMany(mappedBy = "id.resident")
     private List<Residence> residences;
 }
