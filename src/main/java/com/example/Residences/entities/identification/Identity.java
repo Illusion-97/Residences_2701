@@ -22,6 +22,6 @@ public class Identity {
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime birthDate;
 
-    @OneToMany
+    @OneToMany(mappedBy = "owner")
     private List<IdForm> idForms;
 }

@@ -19,4 +19,7 @@ public abstract class IdForm {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String UUID;
     private LocalDate issuedAt;
+
+    @ManyToOne
+    private Personne owner;
 }
