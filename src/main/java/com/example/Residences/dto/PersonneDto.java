@@ -1,5 +1,7 @@
-package com.example.Residences.entities.identification;
+package com.example.Residences.dto;
 
+import com.example.Residences.entities.identification.Identity;
+import com.example.Residences.entities.identification.Personne;
 import lombok.Value;
 
 import java.io.Serializable;
@@ -12,10 +14,18 @@ import java.util.List;
 @Value
 public class PersonneDto implements Serializable {
     long id;
-    String identityFirstName;
-    String identityLastName;
-    LocalDateTime identityBirthDate;
+    IdentityDto identity;
     List<ResidenceDto> residences;
+
+    /**
+     * DTO for {@link Identity}
+     */
+    @Value
+    public static class IdentityDto implements Serializable {
+        String firstName;
+        String lastName;
+        LocalDateTime birthDate;
+    }
 
     /**
      * DTO for {@link com.example.Residences.entities.residences.Residence}
@@ -38,7 +48,6 @@ public class PersonneDto implements Serializable {
             @Value
             public static class ApartmentDto implements Serializable {
                 AddressDto address;
-                List<Integer> pieceSurface;
 
                 /**
                  * DTO for {@link com.example.Residences.entities.residences.Address}

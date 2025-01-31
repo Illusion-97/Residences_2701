@@ -1,7 +1,6 @@
 package com.example.Residences.controllers;
 
-import com.example.Residences.entities.residences.Residence;
-import com.example.Residences.entities.residences.ResidenceDto;
+import com.example.Residences.dto.ResidenceDto;
 import com.example.Residences.entities.residences.ResidenceId;
 import com.example.Residences.generic.Generic_ObjectId_Controller;
 import com.example.Residences.services.ResidenceService;

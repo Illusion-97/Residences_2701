@@ -1,6 +1,6 @@
 package com.example.Residences.controllers;
 
-import com.example.Residences.entities.identification.PersonneDto;
+import com.example.Residences.dto.PersonneDto;
 import com.example.Residences.generic.Generic_Controller;
 import com.example.Residences.services.PersonneService;
 import org.springframework.web.bind.annotation.RequestMapping;

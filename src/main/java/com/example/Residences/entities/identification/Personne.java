@@ -1,8 +1,6 @@
 package com.example.Residences.entities.identification;
 
 import com.example.Residences.entities.residences.Residence;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

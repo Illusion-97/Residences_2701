@@ -10,12 +10,15 @@ public abstract class Generic_ServiceImpl<
         E,
         I,
         D,
-        R extends JpaRepository<E,I>
+        R extends JpaRepository<E,I>,
+        M extends Generic_Mapper<E,D>
         > implements Generic_Service<D,I> {
     protected R repository;
+    protected M mapper;
 
-    public Generic_ServiceImpl(R repository) {
+    public Generic_ServiceImpl(R repository, M mapper) {
         this.repository = repository;
+        this.mapper = mapper;
     }
 
     @Override
@@ -30,9 +33,9 @@ public abstract class Generic_ServiceImpl<
     public void deleteById(I id) {repository.deleteById(id);}
 
     E toEntity(D dto) {
-        return null;
+        return mapper.toEntity(dto);
     }
 
 
-    D toDto(E entity) {return null;}
+    D toDto(E entity) {return mapper.toDto(entity);}
 }
